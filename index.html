@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2do llamado de samuel Galería Dinámica</title>
+    <style>
+        :root {
+            --color-primario: #FF6B6B;
+            --color-secundario: #4ECDC4;
+            --color-terciario: #FFE66D;
+            --color-texto: #082ed8;
+            --color-fondo: #F7FFF7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--color-fondo), #E0F7E0);
+            margin: 0;
+            padding: 0;
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                        var(--color-primario), 
+                        var(--color-secundario), 
+                        var(--color-terciario), 
+                        var(--color-primario));
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: gradientBG 15s ease infinite;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0 0;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .social {
+            font-style: italic;
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .media-section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .media-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--color-terciario);
+            display: inline-block;
+        }
+        
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .media-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            background: white;
+        }
+        
+        .media-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .media-item video {
+            width: 100%;
+            display: block;
+        }
+        
+        .media-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .media-caption {
+            padding: 1rem;
+            background: linear-gradient(to right, var(--color-secundario), var(--color-primario));
+            color: white;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Efectos de aparición al hacer scroll */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SAMUEL</h1>
+        <h2>El amado de Samuel</h2>
+        <div class="social">@samuelscdjcabimas</div>
+    </div>
+
+    <div class="container">
+        <!-- Sección de Imágenes -->
+        <div class="media-section">
+            <h2 class="section-title">GALERÍA DE IMÁGENES</h2>
+            <div class="media-container">
+                <!-- Reemplaza con tus imágenes -->
+                <div class="media-item">
+                    <img src="Imagen de WhatsApp 2025-06-04 a las 14.53.32_5a82e3fd.jpg " alt="juntos como hermanos"
+                    <div class="media-caption">juntos como hermanos </div> 
+                </div>
+                <div class="media-item">
+                    <img src="Imagen de WhatsApp 2025-06-02 a las 16.57.05_e288d0a5.jpg" alt="SAMUEL">
+                    <div class="media-caption">SAMUEL</div>
+                </div>
+                <div class="media-item">
+                    <img src="Imagen de WhatsApp 2025-06-02 a las 15.58.18_98c29f70.jpg" alt="🙏​🙏​​🎈​">
+                    <div class="media-caption">🙏​🙏​​🎈</div>
+                </div>
+                <div class="media-item">
+                    <img src="Imagen de WhatsApp 2025-06-02 a las 15.58.05_5603bf08.jpg" alt="🙌​❣️​">
+                    <div class="media-caption">🙌​❣️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Videos -->
+        <div class="media-section">
+            <h2 class="section-title">VIDEOS DESTACADOS</h2>
+            <div class="media-container">
+                <!-- Reemplaza con tus videos -->
+                <div class="media-item">
+                    <video controls poster="video-poster1.jpg">
+                        <source src="Video de WhatsApp 2025-06-04 a las 14.54.15_4d9fbf19.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="media-caption">habla señor </div>
+                </div>
+                <div class="media-item">
+                    <video controls poster="Video de WhatsApp 2025-06-02 a las 11.40.37_a0dcacdb.mp4">
+                        <source src="Video de WhatsApp 2025-06-02 a las 11.40.37_a0dcacdb.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="media-caption">🔔​🔔​</div>
+                </div>
+                <div class="media-item">
+                    <video controls poster="Video de WhatsApp 2025-06-02 a las 11.40.20_b697e37b.mp4">
+                        <source src="Video de WhatsApp 2025-06-02 a las 11.40.20_b697e37b.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="media-caption">granito de mostaza</div>
+                </div>
+                <div class="media-item">
+                    <video controls poster="Video de WhatsApp 2025-06-02 a las 11.40.20_b876287f.mp4">
+                        <source src="Video de WhatsApp 2025-06-02 a las 11.40.20_b876287f.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="media-caption">samuel forever ❤️‍🔥​</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Samuel - Todos los derechos reservados | Diseñado con ❤️
+    </div>
+
+    <script>
+        // Efecto de aparición al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const mediaItems = document.querySelectorAll('.media-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            mediaItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
